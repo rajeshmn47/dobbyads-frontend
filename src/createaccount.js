@@ -18,7 +18,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from "@mui/x-date-pickers";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "./actions/userAction";
+import { loadUser, register } from "./actions/userAction";
 import { useNavigate } from "react-router-dom";
 
 const locales = ["ko", "fr", "de"];
@@ -33,6 +33,7 @@ function CreateAccount() {
 
   useEffect(() => {
     if (isAuthenticated) {
+      dispatch(loadUser())
       navigate("/imagelist");
     }
   }, [dispatch, isAuthenticated]);
