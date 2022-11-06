@@ -125,7 +125,7 @@ function ImageList() {
                   <td>{l.name}</td>
                   <td>
                     <img
-                      src={`http://127.0.0.1:9000/images/${l.image}`}
+                      src={`https://vouch-digital-backend.herokuapp.com/images/${l.image}`}
                       width="400"
                     />
                   </td>

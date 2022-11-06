@@ -33,7 +33,7 @@ function CreateAccount() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/list");
+      navigate("/imagelist");
     }
   }, [dispatch, isAuthenticated]);
 
