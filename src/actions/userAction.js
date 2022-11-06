@@ -21,14 +21,14 @@ export const register = (myform) => async (dispatch) => {
   try {
     console.log(myform);
 
-    const { data } = await axios({
+    const {data } = await axios({
       method: "POST",
       url: "https://vouch-digital-backend.herokuapp.com/auth/register",
       data: myform,
       headers: headers,
     });
     console.log(data);
-    localStorage.setItem("access_token", data.access_token);
+    localStorage.setItem("access_token", data.server_token);
     if (data.user) {
       console.log("true rajesh");
       dispatch({ type: REGISTER_USER_SUCCESS, payload: "data" });
